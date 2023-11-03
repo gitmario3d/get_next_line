@@ -119,16 +119,3 @@ char	*get_next_line(int fd)
 	pre_read = clean_pre_read(pre_read);
 	return (new_line);
 }
-/* La función lo que hace es devolver la siguiente linea del fd dado como 
-parámetro leyendo cada vez una cantidad de caracteres BUFFER_SIZE hasta que 
-se encuentre el final de linea o del archivo.
-Para ello, lo primero que hace es comprobar si en el buffer, que puede ya tener
-un valor de una llamada previa, hay algún salto de linea usando ft_strchr.
-Si lo hay, no volver a usar read, si no que creamos nuestra linea a imprimir
-desde el inicio del buffer hasta el primer salto de linea que encontremos, tras
-imprimirla modificar el buffer para eliminar la linea ya impresa por pantalla.
-En el caso de que al comprobar el buffer no haya ningún salto de linea,
-concatenar el buffer ya existente con el resultado de hacer un nuevo read al fd
-y volver a imprimir por pantalla el buffer desde el inicio hasta el siguiente
-salto de linea con su consecuente eliminación de los caracteres impresos del
-buffer por pantalla*/
